@@ -5,7 +5,9 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
 
-//      Created by Andres Gonzalez 10/30/17
+/**
+ * Created by Andres Gonzalez ====== 10/31/17
+ **/
 public class MainLinkedList {
 
     public static void main(String[] args) {

@@ -1,7 +1,8 @@
 package com.andgopa.linkedlist;
 
-//      Created by Andres Gonzalez 10/30/17
-
+/**
+ * Created by Andres Gonzalez ====== 10/31/17
+ **/
 public class Customer {
     private String name;
     private Double balance;
