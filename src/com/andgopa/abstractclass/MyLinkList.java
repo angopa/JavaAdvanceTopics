@@ -60,6 +60,7 @@ public class MyLinkList implements NodeList {
 
     @Override
     public boolean removeItem(ListItem item) {
+<<<<<<< HEAD
         if (item != null) {
             System.out.println("Deleting item " + item.getValue());
         }
@@ -86,6 +87,8 @@ public class MyLinkList implements NodeList {
             }
         }
         // We have reach the end of the list without finding the item to delete
+=======
+>>>>>>> eac5ebfdba58c29c13235aa01c3b61c452f5565f
         return false;
     }
 
