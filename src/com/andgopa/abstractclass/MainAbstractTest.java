@@ -7,56 +7,56 @@ package com.andgopa.abstractclass;
 public class MainAbstractTest {
 
     public static void main(String[] args) {
-        MyLinkList list = new MyLinkList(null);
-        list.traverse(list.getRoot());
+        SearchTree tree = new SearchTree(null);
+        tree.traverse(tree.getRoot());
 
         String stringData = "5 7 3 9 8 2 1 0 4 6";
         String[] data = stringData.split(" ");
         for (String s : data) {
-            list.addItem(new Node(s));
+            tree.addItem(new Node(s));
         }
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("3"));
+        tree.removeItem(new Node("3"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("5"));
+        tree.removeItem(new Node("5"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("7"));
+        tree.removeItem(new Node("7"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("6"));
+        tree.removeItem(new Node("6"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("4"));
+        tree.removeItem(new Node("4"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("0"));
+        tree.removeItem(new Node("0"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("1"));
+        tree.removeItem(new Node("1"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("2"));
+        tree.removeItem(new Node("2"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("9"));
+        tree.removeItem(new Node("9"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
 
-        list.removeItem(new Node("8"));
+        tree.removeItem(new Node("8"));
 
-        list.traverse(list.getRoot());
+        tree.traverse(tree.getRoot());
     }
 
 }
