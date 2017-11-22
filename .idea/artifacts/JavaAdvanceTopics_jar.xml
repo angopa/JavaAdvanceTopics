@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaAdvanceTopics:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaAdvanceTopics_jar</output-path>
+    <root id="archive" name="JavaAdvanceTopics.jar">
+      <element id="module-output" name="JavaAdvanceTopics" />
+    </root>
+  </artifact>
+</component>

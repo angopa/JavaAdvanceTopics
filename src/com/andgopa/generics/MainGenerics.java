@@ -11,7 +11,6 @@ public class MainGenerics {
         Team<FootballPlayer> fremantle = new Team<>("Fremantle");
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
 
-
         hawthorn.matchResult(fremantle, 1, 3);
         hawthorn.matchResult(adelaideCrows, 3, 8);
 
