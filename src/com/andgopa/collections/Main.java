@@ -14,10 +14,10 @@ public class Main {
             System.out.println("Sorry seat is taken");
         }
 
-        if (theatre.reserveSeat("H11")) {
-            System.out.println("Please pay");
-        } else {
-            System.out.println("Sorry seat is taken");
-        }
+//        if (theatre.reserveSeat("H11")) {
+//            System.out.println("Please pay");
+//        } else {
+//            System.out.println("Sorry seat is taken");
+//        }
     }
 }
