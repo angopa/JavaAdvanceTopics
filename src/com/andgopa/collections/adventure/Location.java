@@ -11,14 +11,16 @@ public class Location {
     private final String description;
     private final Map<String, Integer> exist;
 
-    public Location(int locationId, String description) {
+    public Location(int locationId, String description, Map<String, Integer> exists) {
         this.locationId = locationId;
         this.description = description;
-        this.exist = new HashMap<>();
-    }
+        if (exists != null) {
+            this.exist = new HashMap<>(exists);
+        } else {
+            this.exist = new HashMap<>();
+        }
 
-    public void addExist(String direction, int location) {
-        exist.put(direction, location);
+        this.exist.put("Q", 0);
     }
 
     public int getLocationId() {
