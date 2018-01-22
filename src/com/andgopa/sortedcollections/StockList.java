@@ -20,27 +20,56 @@ public class StockList {
             StockItem inStock = list.getOrDefault(item.getName(), item);
             // If there are already stocks of this item, adjust quantity
             if (inStock != item) {
-                item.adjustStock(inStock.quantityInStock());
+                item.adjustStock(inStock.availableQuantity());
             }
 
             list.put(item.getName(), item);
-            return item.quantityInStock();
+            return item.availableQuantity();
         }
         return 0;
     }
 
 
     public int sellStock(String item, int quantity) {
-        StockItem inStock = list.getOrDefault(item, null);
-        if ((inStock != null) && (quantity > 0) && (inStock.quantityInStock() >= quantity)) {
-            inStock.adjustStock(-quantity);
-            return quantity;
+        StockItem inStock = list.get(item);
+        if (inStock != null && quantity > 0) {
+            return inStock.finaliseStock(quantity);
+        }
+//        StockItem inStock = list.getOrDefault(item, null);
+//        if ((inStock != null) && (quantity > 0) && (inStock.availableQuantity() >= quantity)) {
+//            inStock.adjustStock(-quantity);
+//            return quantity;
+//        }
+        return 0;
+    }
+
+    public int reservedStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
+        if (inStock != null && quantity > 0) {
+            return inStock.resevedStock(quantity);
         }
         return 0;
     }
 
+    public int unreservedStock(String item, int quantity) {
+        StockItem inStock = list.get(item);
+        if (inStock != null && quantity > 0) {
+            return inStock.unreservedStock(quantity);
+        }
+        return 0;
+    }
+
+
     public StockItem get(String item) {
         return list.get(item);
+    }
+
+    public Map<String, Double> priceList() {
+        Map<String, Double> prices = new LinkedHashMap<>();
+        for (Map.Entry<String, StockItem> item : list.entrySet()) {
+            prices.put(item.getKey(), item.getValue().getPrice());
+        }
+        return Collections.unmodifiableMap(prices);
     }
 
     public Map<String, StockItem> items() {
@@ -53,8 +82,8 @@ public class StockList {
         double totalCost = 0.0;
         for (Map.Entry<String, StockItem> item : list.entrySet()) {
             StockItem stockItem = item.getValue();
-            double itemValue = stockItem.getPrice() * stockItem.quantityInStock();
-            s = s + stockItem + ". There are " + stockItem.quantityInStock() + " in stock. Value of Items: ";
+            double itemValue = stockItem.getPrice() * stockItem.availableQuantity();
+            s = s + stockItem + ". There are " + stockItem.availableQuantity() + " in stock. Value of Items: ";
             s = s + itemValue + "\n";
             totalCost += itemValue;
         }
